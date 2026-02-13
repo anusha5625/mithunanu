@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes">
+  <title>MithunThangoo💘</title>
+  <!-- Google Fonts: Poppins + Playfair for elegance -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET + ROMANTIC ATMOSPHERE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      color: white;
+      position: relative;
+    }
+
+    /* 🌸 BACKGROUND — dreamy and soft */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("anu.jpg") no-repeat center center/cover;
+      filter: brightness(0.8) saturate(1.2) hue-rotate(350deg);
+      z-index: -2;
+    }
+
+    /* ✨ velvet overlay — deeper at edges */
+    body::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 40% 50%, rgba(30, 10, 25, 0.35) 0%, rgba(0, 0, 0, 0.65) 100%);
+      z-index: -1;
+    }
+
+    /* 💎 MAIN CARD — luxurious glass */
+    .container {
+      background: rgba(25, 15, 30, 0.3);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 220, 240, 0.25);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255, 200, 220, 0.1) inset;
+      padding: 40px 30px;
+      border-radius: 40px;
+      width: 90%;
+      max-width: 600px;
+      animation: fadeGlow 2s infinite alternate;
+    }
+
+    @keyframes fadeGlow {
+      0% { box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255, 200, 220, 0.1) inset; }
+      100% { box-shadow: 0 20px 60px rgba(255, 80, 140, 0.3), 0 0 0 2px rgba(255, 150, 200, 0.2) inset; }
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-family: 'Playfair Display', serif;
+      text-shadow: 0 0 20px rgba(255, 100, 150, 0.6);
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    /* ✍️ typewriter area — poetic */
+    .typing {
+      font-size: 1.2rem;
+      min-height: 80px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: #ffeef5;
+      text-shadow: 0 0 8px rgba(255, 200, 220, 0.5);
+      padding: 10px;
+      font-style: italic;
+    }
+
+    /* 🎀 BUTTONS — charming & refined */
+    button {
+      padding: 14px 25px;
+      border-radius: 50px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 8px 6px;
+      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      letter-spacing: 1px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      transform: translate(-50%, -50%);
+      transition: width 0.4s, height 0.4s;
+    }
+
+    button:hover::after {
+      width: 200px;
+      height: 200px;
+    }
+
+    #yesBtn {
+      background: linear-gradient(145deg, #ff3b6f, #ff1e4d);
+      color: white;
+      border: 1px solid #ffb6c1;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 25px #ff4d6d;
+    }
+
+    #noBtn {
+      background: white;
+      color: #ff2e63;
+      border: 1px solid #ffccd5;
+      position: relative;
+      transition: transform 0.25s ease;
+    }
+
+    #noBtn:hover {
+      background: #fff0f3;
+    }
+
+    /* 🌸 MAYBE BUTTON — cute, floating */
+    #maybeBtn {
+      background: rgba(255, 220, 240, 0.9);
+      backdrop-filter: blur(5px);
+      color: #b34167;
+      border: 1px solid #ffb3c6;
+      box-shadow: 0 0 20px #ffb8c9;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    #maybeBtn:hover {
+      background: #ffe4ec;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 0 35px #ffa5b9;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* 💌 proposal message */
+    #proposal p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      font-weight: 500;
+      text-shadow: 0 0 10px rgba(255, 120, 160, 0.7);
+    }
+
+    /* 🤍 MAYBE MESSAGE — elegant, appears on maybe click */
+    .maybe-message-box {
+      background: rgba(255, 240, 245, 0.95);
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(255, 200, 210, 0.8);
+      border-radius: 30px;
+      padding: 25px;
+      margin: 20px auto 10px;
+      color: #8a4a5c;
+      font-size: 1.2rem;
+      font-weight: 500;
+      box-shadow: 0 10px 30px rgba(255, 150, 170, 0.5);
+      animation: softPop 0.4s ease;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    @keyframes softPop {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .maybe-message-box p {
+      margin: 8px 0;
+      color: #7c3e4f;
+      text-shadow: none;
+    }
+
+    .maybe-message-box .small-heart {
+      color: #ff8da1;
+      font-size: 2rem;
+      margin: 5px 0;
+    }
+
+    /* 🖼️ POP-UP IMAGE STYLES — appears after YES */
+    .popup-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
+      animation: popFade 0.5s ease;
+    }
+
+    .popup-image img {
+      max-width: 80%;
+      max-height: 80vh;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 0 4px rgba(255,220,240,0.5);
+      border: 3px solid white;
+      animation: imgPop 0.4s ease;
+    }
+
+    @keyframes imgPop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes popFade {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* 💖 final message — personalized */
+    #finalMessage h2 {
+      font-size: 2.2rem;
+      font-family: 'Playfair Display', serif;
+      color: #ffe3f0;
+      text-shadow: 0 0 15px #ff88aa;
+      margin-bottom: 20px;
+    }
+
+    .love-letter {
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 200, 220, 0.3);
+      border-radius: 35px;
+      padding: 25px 22px;
+      margin: 15px 0;
+      line-height: 1.9;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .love-letter p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #fff5fa;
+      text-shadow: 0 0 10px rgba(255, 120, 160, 0.4);
+      margin: 8px 0;
+    }
+
+    .love-letter .highlight {
+      font-size: 1.4rem;
+      font-weight: 600;
+      background: linear-gradient(145deg, #ffddee, #ffe0f0);
+
+      display: inline-block;
+      text-shadow: 0 0 15px #ffa5c0;
+    }
+
+    .counter {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+   
+      text-shadow: 0 0 8px rgba(255,200,200,0.3);
+    }
+
+    /* 💫 floating hearts */
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      animation: float 7s linear infinite;
+      z-index: 99;
+      pointer-events: none;
+      filter: drop-shadow(0 0 8px rgba(255,80,120,0.7));
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* 💌 open me button */
+    #startBtn button {
+      background: linear-gradient(145deg, #ff8e9e, #ff6b8b);
+      color: white;
+      font-size: 1.2rem;
+      padding: 16px 38px;
+      border: 2px solid rgba(255,255,255,0.4);
+      box-shadow: 0 0 30px #ff4d6d;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px #ff4d6d; }
+      100% { box-shadow: 0 0 40px #ffa5a5; }
+    }
+
+    /* Maybe message container - more visible */
+    .maybe-area {
+      margin-top: 20px;
+      min-height: 150px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Button container for better spacing */
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 💕 main love card -->
+  <div class="container">
+    <h1>Happy Valentine's Day Thangoo ❤️</h1>
+    <div class="typing" id="typingText"></div>
+
+    <!-- 💌 open the heart -->
+    <div id="startBtn">
+      <button onclick="startLove()">💘 Open My Heart 💘</button>
+    </div>
+
+    <!-- 💞 proposal zone: yes + no + maybe ✨ -->
+    <div id="proposal" class="hidden">
+      <p>Will you be my forever Valentine? 💖</p>
+      
+      <!-- Buttons in a row -->
+      <div class="button-container">
+        <button id="yesBtn" onclick="sayYes()">Yes 😍</button>
+        <button id="maybeBtn" onclick="maybeAnswer()">Maybe... 🤍</button>
+        <button id="noBtn" onmouseover="moveNo()">No 😅</button>
+      </div>
+      
+      <!-- 🤍 MAYBE MESSAGE APPEARS HERE - clearly visible -->
+      <div id="maybeMessageContainer" class="maybe-area"></div>
+    </div>
+
+    <!-- 💗 final love confession (hidden initially, shown after popup) -->
+    <div id="finalMessage" class="hidden">
+      <h2>You are my forever ❤️</h2>
+      <div class="love-letter">
+        <p>I promise to love you endlessly, support you always,</p>
+        <p>and annoy you just a little forever 😚💫</p>
+        <p style="margin: 15px 0; border-top: 1px dashed rgba(255,200,210,0.5); width: 80%; margin-left: auto; margin-right: auto;"></p>
+        <p>This is my very first Valentine's Day,</p>
+        <p>and I wish for you to be my last.</p>
+        <p>I will love you as always, MY THANGAMEY ❤️</p>
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <!-- 🖼️ POP-UP IMAGE (hidden initially) -->
+  <div id="popupContainer" class="popup-image hidden" onclick="this.classList.add('hidden')">
+    <img src="Flork con Rosa - Florkofcows Icons.jpg" 
+         alt="Our special moment" 
+         onerror="this.src='https://images.unsplash.com/photo-1516589091380-5d8e8745c595?w=600&auto=format'">
+  </div>
+
+  <!-- 🎵 background music -->
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+  // 💌 romantic typewriter effect for initial message
+  const text = "From the moment you walked into my life, everything became beautiful...";
+  let i = 0;
+
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("typingText").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 55);
+    }
+  }
+
+  // 💘 open the proposal
+  function startLove() {
+    document.getElementById("startBtn").classList.add("hidden");
+    document.getElementById("proposal").classList.remove("hidden");
+    typeWriter();
+
+    const noBtn = document.getElementById("noBtn");
+    if (noBtn) noBtn.style.transform = "translate(0,0)";
+    clearMaybeMessage();
+  }
+
+  // 💖 YES CLICK
+  function sayYes() {
+    document.getElementById("proposal").classList.add("hidden");
+
+    const popup = document.getElementById("popupContainer");
+    popup.classList.remove("hidden");
+
+    createHearts();
+    for (let i = 0; i < 8; i++) {
+      setTimeout(() => createHearts(), i * 100);
+    }
+
+    setTimeout(() => {
+      popup.classList.add("hidden");
+      document.getElementById("finalMessage").classList.remove("hidden");
+
+      startLoveLetterTypewriter();
+      startCounter();
+
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => createHearts(), i * 120);
+      }
+    }, 3000);
+  }
+
+  // ✍️ FIXED Love Letter Typewriter
+  function startLoveLetterTypewriter() {
+    const paragraphs = document.querySelectorAll("#loveLetter p");
+    let totalDelay = 0;
+    const typingSpeed = 40;
+
+    paragraphs.forEach((p) => {
+      const originalHTML = p.innerHTML; // save full HTML
+      const originalText = p.textContent;
+
+      p.innerHTML = "";
+
+      setTimeout(() => {
+        typeParagraphWithHTML(p, originalHTML, typingSpeed);
+      }, totalDelay);
+
+      totalDelay += originalText.length * typingSpeed + 400;
+    });
+  }
+
+  function typeParagraphWithHTML(element, html, speed) {
+    let i = 0;
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = html;
+
+    const text = tempDiv.textContent;
+    element.innerHTML = "";
+
+    function type() {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      } else {
+        element.innerHTML = html; // restore formatting (highlight)
+      }
+    }
+
+    type();
+  }
+
+  // 🤍 MAYBE
+  function maybeAnswer() {
+    const maybeBtn = document.getElementById("maybeBtn");
+    maybeBtn.style.transform = "scale(0.95)";
+    setTimeout(() => {
+      maybeBtn.style.transform = "scale(1)";
+    }, 200);
+
+    showMaybeMessage();
+
+    for (let i = 0; i < 8; i++) {
+      setTimeout(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "🤍";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+      }, i * 120);
+    }
+  }
+
+  function showMaybeMessage() {
+    const container = document.getElementById("maybeMessageContainer");
+    container.innerHTML = "";
+
+    const messageBox = document.createElement("div");
+    messageBox.className = "maybe-message-box";
+
+    messageBox.innerHTML = `
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <span class="small-heart">🤍</span>
+        <p style="font-size: 1.4rem; margin: 10px 0; font-weight: 700; color: #b34167;">Take all the time you need</p>
+        <p style="font-style: italic; font-size: 1.2rem; opacity: 0.9;">"A slow answer is still a beautiful one"</p>
+        <p style="margin-top: 12px; font-size: 1.1rem;">I'll be right here, always 💗</p>
+        <p style="margin-top: 8px; font-size: 1rem;">No pressure, just love</p>
+
+      </div>
+    `;
+
+    container.appendChild(messageBox);
+  }
+
+  function clearMaybeMessage() {
+    const container = document.getElementById("maybeMessageContainer");
+    if (container) container.innerHTML = "";
+  }
+
+  // 🏃 NO BUTTON
+  function moveNo() {
+    const btn = document.getElementById("noBtn");
+    const x = (Math.random() * 300 - 150);
+    const y = (Math.random() * 200 - 100);
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  // 💫 Hearts
+  function createHearts() {
+    const heartEl = document.createElement("div");
+    heartEl.classList.add("heart");
+    const valentine = ["❤️", "🧡", "💖", "💗", "💘", "💝", "🌸", "✨"];
+    heartEl.innerHTML = valentine[Math.floor(Math.random() * valentine.length)];
+    heartEl.style.left = Math.random() * 100 + "vw";
+    heartEl.style.animationDuration = Math.random() * 4 + 5 + "s";
+    heartEl.style.fontSize = Math.random() * 25 + 18 + "px";
+    document.body.appendChild(heartEl);
+    setTimeout(() => heartEl.remove(), 7000);
+  }
+
+  // 🕰️ Counter
+  function startCounter() {
+    let counterEl = document.getElementById("loveCounter");
+    if (!counterEl) {
+      counterEl = document.createElement("div");
+      counterEl.id = "loveCounter";
+      counterEl.className = "counter";
+      document.getElementById("finalMessage").appendChild(counterEl);
+    }
+
+    const start = new Date();
+
+    setInterval(() => {
+      const now = new Date();
+      const diff = Math.floor((now - start) / 1000);
+      counterEl.innerHTML = `💞 ${diff} I love you thangooo💞`;
+    }, 1000);
+  }
+
+  window.onload = () => {
+    for (let i = 0; i < 5; i++) {
+      setTimeout(createHearts, i * 600);
+    }
+  };
+</script>
+
+</body>
+</html>
